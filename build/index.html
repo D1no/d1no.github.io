@@ -46,12 +46,18 @@
           </p>
           <p>
             About me:<br />
-            I am a software engineer, architect and lead specialised in product delivery and platform intelligence. I combine craftsmanship and an empirical science education to enable system designs and team performance. 
+            I am an Engineer fascinated by platform intelligence and product
+            innovation. To build them, I combine an empirical science education
+            + entrepreneurial past + lots of scars from
+            <span
+              id="timeSinceNaivlyShoehorningWordVectorsIntoGraphEdgePredictions"
+            ></span>
+            in machine learning...
           </p>
           <p>
-            [x] Domain Driven Design, Event Systems, CQRS<br />
-            [x] Platform Integration, Advanced Machine Learning enabled UX<br />
-            [x] Systems Thinking Approach to Engineering Leadership & Management
+            [x] Domain Driven Design, UX, Event Systems<br />
+            [x] Platform Architecture, Product Intelligence<br />
+            [x] De-Risking Innovation via Systems Thinking
           </p>
         </div>
       </div>
@@ -60,5 +66,38 @@
     </div>
 
     <script src="./index_files/index.js"></script>
+    <script>
+      function timeSinceNaivlyShoehorningWordVectorsIntoGraphEdgePredictions() {
+        /**
+         * You probably know this:
+         * https://arxiv.org/pdf/1301.3781
+         **/
+        const startDate = new Date("2013-02-23T00:00:00");
+        const now = new Date();
+        const diff = now - startDate;
+
+        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+        const days = Math.floor(
+          (diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)
+        );
+        const hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        return `${years}y ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+
+      function updateExperience() {
+        document.getElementById(
+          "timeSinceNaivlyShoehorningWordVectorsIntoGraphEdgePredictions"
+        ).innerText =
+          timeSinceNaivlyShoehorningWordVectorsIntoGraphEdgePredictions();
+      }
+
+      setInterval(updateExperience, 1000);
+      updateExperience();
+    </script>
   </body>
 </html>
