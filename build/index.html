@@ -51,7 +51,7 @@
             + entrepreneurial past +
             <span
               id="timeSinceNaivlyShoehorningWordVectorsIntoGraphEdgePredictions"
-            ></span>
+            >00y 00d 00h 00m 00s</span>
             in machine learning...
           </p>
           <p>
@@ -59,6 +59,11 @@
             [x] Domain Driven Design, UX, Event Systems<br />
             [x] Systems Thinking in Leadership
           </p>
+            <p data-nosnippet="true"></p>
+            <span class="highlight">-/+ edit</span> (update 2025)<br />
+            After some time in research, looking to join a tribe!<br />
+            > <span id="email"></span>
+            </p>
         </div>
       </div>
       <div class="piece scanlines noclick"></div>
@@ -66,6 +71,22 @@
     </div>
 
     <script src="./index_files/index.js"></script>
+    <script>
+      const email = "web@din.ooo";
+      let index = 0;
+      const typingSpeed = 1000 / email.length;
+
+      function typeEmail() {
+        if (index < email.length) {
+        document.getElementById("email").innerText += email.charAt(index);
+        index++;
+        setTimeout(typeEmail, typingSpeed);
+        }
+      }
+
+      document.getElementById("email").innerText = "";
+      typeEmail();
+    </script>
     <script>
       function timeSinceNaivlyShoehorningWordVectorsIntoGraphEdgePredictions() {
         /**
@@ -86,7 +107,11 @@
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        return `${years}y ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        function pad(number) {
+          return number.toString().padStart(2, '0');
+        }
+
+        return `${pad(years)}y ${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
       }
 
       function updateExperience() {
